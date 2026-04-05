@@ -1,0 +1,29 @@
+[workspace]
+members = [
+    "test-baseline",
+    "test-static-sysvars",
+    "test-syscall",
+    "test-sysvar-account",
+    "test-sysvar-account-checked",
+]
+resolver = "2"
+
+[workspace.dependencies]
+# Use the git version of pinocchio for latest improvements to Rent sysvar.
+pinocchio = { git = "https://github.com/anza-xyz/pinocchio", rev = "009301423f920fd105bd32a25560d127b6f0bf4f" }
+# Use our Agave 4.0.0 fork of Mollusk with custom static sysvars feature set.
+mollusk-svm = { git = "https://github.com/blueshift-gg/mollusk", branch = "static-sysvars"}
+solana-account = "4.1.0"
+solana-instruction = "3.3.0"
+
+[package]
+name = "static-sysvars-tests"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dev-dependencies]
+mollusk-svm = { workspace = true }
+solana-account = { workspace = true }
+solana-instruction = { workspace = true }
+pinocchio = { workspace = true }

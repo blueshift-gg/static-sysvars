@@ -1,0 +1,11 @@
+[package]
+name = "test-static-sysvars"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+pinocchio = { workspace = true }
+static-syscalls = { path = "../crates/static-syscalls" }
