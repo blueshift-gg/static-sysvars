@@ -19,10 +19,14 @@ Run benchmarks:
 cargo test bench_all -- --nocapture
 ```
 
-Run benchmarks with JIT (x86_64 Mac only, uses Rosetta):
+Run benchmarks with JIT on Mac with Rosetta:
 ```sh
 cargo test bench_all --target=x86_64-apple-darwin -- --nocapture
 ```
+
+## Benchmark Results
+
+See [BENCHMARKS.md](BENCHMARKS.md) for detailed performance results across different execution environments (Interpreter, JIT x86, JIT Rosetta).
 
 ## How It Works
 
