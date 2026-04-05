@@ -1,16 +1,17 @@
 # Benchmarks
 
+All benchmark results are averaged over 100,000 iterations if the same instruction in a single instance of Mollusk to avoid the overhead of setup and teardown and compared to a baseline of an empty Pinocchio program that simply returns Ok(()).
+
 ## Interpreter
 
-Benchmark results averaged over 100,000 iterations
 
-##### BASELINE (Reference)
+#### BASELINE (Reference)
 
 | Method | Total (ms) | Avg (µs) | CUs |
 |--------|-----------|----------|-----|
 | Baseline (empty program) | 4532.47 | 45.32 | 2 |
 
-##### SYSVAR ACCESS METHODS
+#### SYSVAR ACCESS METHODS
 
 | Method | Total (ms) | Avg (µs) | CUs | Overhead (µs) | vs Fastest |
 |--------|-----------|----------|-----|---------------|------------|
@@ -21,15 +22,13 @@ Benchmark results averaged over 100,000 iterations
 
 ## JIT (x86)
 
-Benchmark results averaged over 100,000 iterations
-
-##### BASELINE (Reference)
+#### BASELINE (Reference)
 
 | Method | Total (ms) | Avg (µs) | CUs |
 |--------|-----------|----------|-----|
 | Baseline (empty program) | 3304.04 | 33.04 | 2 |
 
-##### SYSVAR ACCESS METHODS
+#### SYSVAR ACCESS METHODS
 
 | Method | Total (ms) | Avg (µs) | CUs | Overhead (µs) | vs Fastest |
 |--------|-----------|----------|-----|---------------|------------|
@@ -38,30 +37,16 @@ Benchmark results averaged over 100,000 iterations
 | Sysvar Account (unchecked) | 3600.72 | 36.01 | 9 | 2.967 | 9.07x |
 | Sysvar Account (checked) | 3959.75 | 39.60 | 27 | 6.557 | 20.05x |
 
-Note: CUs = Compute Units per iteration
-      Overhead = Method Time - Baseline (isolates sysvar access cost)
-      vs Fastest = Method Overhead / Fastest Overhead (1.0x = fastest method)
-test bench_all ... ok
-
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 17.61s
-
-     Running tests/tests.rs (target/debug/deps/tests-9e338049580ff0bf)
-
-running 0 tests
-
-test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.00s
 
 ## JIT (Arm64 Mac with Rosetta)
 
-Benchmark results averaged over 100,000 iterations
-
-##### BASELINE (Reference)
+#### BASELINE (Reference)
 
 | Method | Total (ms) | Avg (µs) | CUs |
 |--------|-----------|----------|-----|
 | Baseline (empty program) | 7965.38 | 79.65 | 2 |
 
-##### SYSVAR ACCESS METHODS
+#### SYSVAR ACCESS METHODS
 
 | Method | Total (ms) | Avg (µs) | CUs | Overhead (µs) | vs Fastest |
 |--------|-----------|----------|-----|---------------|------------|
