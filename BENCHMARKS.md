@@ -1,6 +1,6 @@
 # Benchmarks
 
-All benchmark results are averaged over 100,000 iterations if the same instruction in a single instance of Mollusk to avoid the overhead of setup and teardown and compared to a baseline of an empty Pinocchio program that simply returns Ok(()).
+All benchmark results are averaged over 100,000 iterations of the same instruction in a single instance of Mollusk to avoid the overhead of setup and teardown and compared to a baseline of an empty Pinocchio program that simply returns Ok(()).
 
 ## Interpreter
 
